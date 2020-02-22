@@ -1,0 +1,26 @@
+﻿@Model ChemicalShopping.Models.ViewModels.ShowChemical
+@{
+    ViewBag.Title = "New";
+}
+
+    <h2>@Model.chemical.ChemicalName</h2>
+    <div>
+        <div>Product Code @Model.chemical.ProductCode</div>
+        <div>Price $ @Model.chemical.Price US</div>
+        <div>MinOrder @Model.chemical.MinOrder  kg</div>
+        <div>ProductDescription @Model.chemical.ProductDescription</div>
+        <div>category @Model.chemical.CategoryID</div>
+    </div>
+
+    <div>
+        <a href="/Chemical/Update/@Model.chemical.ChemicalID">Edit</a>
+        <a href="/Chemical/Delete/@Model.chemical.ChemicalID">Remove</a>
+    </div>
+    <div>
+        Here are the orders which include @Model.chemical.ChemicalName
+    </div>
+
+    <div>
+        <a href="/Category/List" class="crudlink">Back to Category List</a>
+    </div>
+

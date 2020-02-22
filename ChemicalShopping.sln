@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChemicalShopping", "ChemicalShopping.csproj", "{0813FF33-A269-4701-A53E-8DC86924AFDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChemicalShopping.Tests", "..\ChemicalShopping.Tests\ChemicalShopping.Tests.csproj", "{7C6FF25F-7937-48A6-A3D2-943A591C3C05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0813FF33-A269-4701-A53E-8DC86924AFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0813FF33-A269-4701-A53E-8DC86924AFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0813FF33-A269-4701-A53E-8DC86924AFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0813FF33-A269-4701-A53E-8DC86924AFDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C6FF25F-7937-48A6-A3D2-943A591C3C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6FF25F-7937-48A6-A3D2-943A591C3C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C6FF25F-7937-48A6-A3D2-943A591C3C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C6FF25F-7937-48A6-A3D2-943A591C3C05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1BEBB9A2-2DB4-4920-BE42-64AFBF7519ED}
+	EndGlobalSection
+EndGlobal

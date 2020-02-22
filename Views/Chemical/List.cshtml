@@ -1,0 +1,71 @@
+﻿@Model ChemicalShopping.Models.ViewModels.ShowCategory
+
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Chemical List</h2>
+
+<!--Search-->
+<div class="search">
+    <form action="/Chemical/List" method="get">
+        <input type="text" name="chemicalSearchKey" id="chemicalSearchKey" />
+        <input type="submit" value="Search" />
+    </form>
+</div>
+
+<div class="categorybar">
+    <!--right side show category-->
+    <h3>Category</h3>
+    <div class="catelist">
+        @{
+            foreach (var category in Model.categories)
+            {
+                if (@category.CategoryID == 1)
+                {
+                    <div>
+                        <form method="get" action="/Chemical/List/@category.CategoryID">
+                            <input onchange='this.form.submit();' type="radio" name="id" id="cate + @category.CategoryID" checked>@category.CategoryName
+                        </form>
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <form method="get" action="/Chemical/List/@category.CategoryID">
+                            <input onchange='this.form.submit();' type="radio" name="cate" id="cate + @category.CategoryID">@category.CategoryName
+                        </form>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>
+
+<!-- main content show chemical -->
+<div class="chemical_list">
+    <!--each chemical part(div)-->
+    @{
+        foreach (var chemical in Model.chemicals)
+        {
+            <div class="each_chemical">
+                <div class="img">
+                    <img alt="Image of @chemical.ChemicalName" />
+                </div>
+                <div class="chemicalName">@chemical.ChemicalName</div>
+                <div class="price">@chemical.Price</div>
+                <div class="Edit"><a href="/Chemical/Update/@chemical.ChemicalID">Edit</a></div>
+                <div class="Remove"><a href="/Chemical/Delete/@chemical.ChemicalID">Remove</a></div>
+            </div>
+        }
+        //https://stackoverflow.com/questions/18564205/html-submit-form-on-radio-button-check/18564231
+    }
+</div>
+
+<!-- Add -->
+<div class="cruddiv">
+    <a class="crudlink" href="/Chemical/New">+ Add New Chemical</a>
+</div>
+
+
+

@@ -1,0 +1,23 @@
+﻿@Model ChemicalShopping.Models.ViewModels.ShowCategory
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>@Model.category.CategoryName </h2>
+<div>
+    <div>Chemicals in @Model.category.CategoryName : </div>
+    <div>
+        @{ 
+            foreach (var chemical in @Model.chemicals)
+            {
+                <div>
+                    <a href="/Chemical/Show/@chemical.ChemicalID">@chemical.ChemicalName</a>
+                </div>
+            }
+        }
+    </div>
+</div>
+<div>
+    <a href="/Category/List" class="crudlink">Back to Category List</a>
+</div>
+

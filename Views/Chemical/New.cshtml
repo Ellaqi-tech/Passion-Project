@@ -1,0 +1,51 @@
+﻿@Model List<ChemicalShopping.Models.Category>
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Add a Chemical Product</h2>
+
+<div class="maincontent">
+    <form action="/Chemical/Add" method="post">
+        <div class="inputfield">
+            <label for="productname">Product name </label>
+            <input type="text" name="productname" id="productname" />
+        </div>
+        <div class="inputfield">
+            <label for="productcate">Belongs to </label>
+            <select id="CategoryID" type="text" name="CategoryID">
+                @{
+                    <!--why not Model.Category ?-->
+                    foreach (var category in Model)
+                    {
+                        <option value="@category.CategoryID">@category.CategoryName</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="inputfield">
+            <label for="productcode">Product code </label>
+            <input type="text" name="productcode" id="productcode" />
+        </div>
+        <div class="inputfield">
+            <label for="productprice">Price </label>
+            US$<input type="text" name="productprice" id="productprice" />/kg
+        </div>
+        <div class="inputfield">
+            <label for="productmin">Min.Order </label>
+            <input type="text" name="productmin" id="productmin" /> kg
+        </div>
+        <div class="inputfield textarea">
+            <label for="productdes">Product description </label>
+            <textarea type="text" name="productdes" id="productdes"></textarea>
+        </div>
+
+        <div class="submit">
+            <input type="submit" value="Add" />
+        </div>
+    </form>
+</div>
+
+<div class="cruddiv"><a class="crudlink" href="/Chemical/List">Back to Chemical List</a></div>
+
+

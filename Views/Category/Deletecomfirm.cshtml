@@ -1,0 +1,15 @@
+﻿@Model ChemicalShopping.Models.Category
+@{
+    ViewBag.Title = "Deletecomfirm";
+}
+
+<h2>Do you want to delete @Model.CategoryName ? </h2>
+<div class="cancel">
+    <a href="/Category/List" class="crudlink">Cancel</a>
+</div>
+<form method="post" action="/Category/Delete/@Model.CategoryID">
+    <div class="comfirm">
+        <input type="submit" value="Comfirm" />
+    </div>
+</form>
+

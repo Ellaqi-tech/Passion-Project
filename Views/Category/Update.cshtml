@@ -1,0 +1,14 @@
+﻿@Model ChemicalShopping.Models.Category
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Edit @Model.CategoryName</h2>
+<form method="post" action="/Category/Update/@Model.CategoryID">
+    <input type="text" name="CateName" id="CateName" value="@Model.CategoryName" /><br />
+    <input type="submit" value="Save" />
+</form>
+<div>
+    <a href="/Category/List" class="crudlink">Back to Category List</a>
+</div>
+

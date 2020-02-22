@@ -1,0 +1,56 @@
+﻿@Model ChemicalShopping.Models.ViewModels.UpdateChemical
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update @Model.Chemical.ChemicalName Information</h2>
+
+<div class="maincontent">
+    <form action="/Chemical/Update/@Model.Chemical.ChemicalID" method="post">
+        <div class="inputfield">
+            <label for="ChemicalName">Product name </label>
+            <input type="text" name="ChemicalName" id="productname" value="@Model.Chemical.ChemicalName" />
+        </div>
+        <div class="inputfield">
+            <label for="CategoryID">Belongs to </label>
+            <select id="CategoryID" type="text" name="CategoryID">
+                @{
+                    foreach (var category in Model.Category)
+                    {
+                        var selected = "";
+                        if (Model.Chemical.CategoryID == category.CategoryID)
+                        {
+                            selected = "selected";
+                        }
+                        <option value="@category.CategoryID" @selected>@category.CategoryName</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="inputfield">
+            <label for="ProductCode">Product code </label>
+            <input type="text" name="ProductCode" id="ProductCode" value="@Model.Chemical.ProductCode" />
+        </div>
+        <div class="inputfield">
+            <label for="Price">Price </label>
+            US$<input type="text" name="Price" id="productprice" value="@Model.Chemical.Price" />/kg
+        </div>
+        <div class="inputfield">
+            <label for="MinOrder">Min.Order </label>
+            <input type="text" name="MinOrder" id="MinOrder" value="@Model.Chemical.MinOrder" /> kg
+        </div>
+        <div class="inputfield textarea">
+            <label for="ProductDescription">Product description </label>
+            <textarea type="text" name="ProductDescription" id="ProductDescription">
+                @Model.Chemical.ProductDescription
+            </textarea>
+        </div>
+
+        <div class="submit">
+            <input type="submit" value="Save" />
+        </div>
+    </form>
+</div>
+
+<div class="cruddiv"><a class="crudlink" href="/Chemical/List">Back to Chemical List</a></div>
+

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add new category</h2>
+<form method="post" action="/Category/Add">
+    <label for="name">Category Name </label><br />
+    <input type="text" name="CateName" id="CateName" /><br />
+    <input type="submit" value="add" />
+</form>
+<div>
+    <a href="/Category/List" class="crudlink">Back to Category List</a>
+</div>
+
+
+
