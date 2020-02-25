@@ -13,11 +13,13 @@ namespace ChemicalShopping.Models
         /* describe a company
          * name
          * address
+         * maybe promo code for company
          */
         [Key]
         public int CompanylID { get; set; }
         public string CompanyName { get; set; }
         public string CompanyAddress { get; set; }
+        public string companyPromo { get; set; }
 
         //One Company to many Orders
         public ICollection<Order> Orders { get; set; }

@@ -14,6 +14,7 @@ namespace ChemicalShopping.Models
          * 2. volume/quantity (Kg)
          * 3. total cost ($US)
          * 4. issue date
+         * 5. promo code
          * 
          * A Order should reference:
          * 1. Chemicals
@@ -21,9 +22,10 @@ namespace ChemicalShopping.Models
          */
         [Key]
         public int OrderID { get; set; }
-        public int quantity { get; set; } //Kg
+        public int Quantity { get; set; } //Kg
         public int Total { get; set; } //$US
         public DateTime IssueDate { get; set; }
+        public string PromoCode { get; set; }
 
         //Many Chemical to many Orders
         public ICollection<Chemical> Chemicals { get; set; }
